@@ -31,7 +31,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t eya2554/flaskapp .
+          docker build -t eya2554/appflask .
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
