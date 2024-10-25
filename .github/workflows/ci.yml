@@ -28,16 +28,15 @@ jobs:
       - name: Run tests
         run: |
           pytest  # remplacez par votre commande de test
+      - name: Build Docker image
+        run: |
+          docker build -t eya2554/flaskapp .
+
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKER_eya2554 }}  # Assurez-vous que cela correspond à votre secret renommé
-          password: ${{ secrets.DOCKER_Paris210824!@ }}  # Assurez-vous que cela correspond à votre secret renommé
-
-      - name: Build and tag Docker image
+           username: ${{ secrets.DOCKER_USERNAME }}  # Utilisation du secret
+           password: ${{ secrets.DOCKER_PASSWORD }}  # Utilisation du secret
+      - name: Push Docker image
         run: |
-          docker build -t ${{ secrets.DOCKER_eya2554 }}/flaskapp:latest .
-
-      - name: Push Docker image to Docker Hub
-        run: |
-          docker push ${{ secrets.DOCKER_eya2554 }}/flaskapp:latest
+          docker push eya2554/flaskapp
