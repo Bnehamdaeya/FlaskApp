@@ -41,5 +41,5 @@ jobs:
 
       - name: Push Docker image to Docker Hub
         run: |
-          docker tag eya2554/flaskapp eya2554/flaskapp:latest
-          docker push eya2554/flaskapp:latest
+          docker tag eya2554/appflask eya2554/appflask:latest
+          docker push eya2554/appflask:latest
