@@ -30,4 +30,9 @@ jobs:
         run: |
           pytest
         continue-on-error: true  # Only for debugging
+        - name: Push to Docker Hub
+        run: |
+          echo "${{ secrets.DOCKER_Paris210824!@ }}" | docker login -u "${{ secrets.DOCKER_eya2554 }}" --password-stdin
+          docker build -t ton_nom_utilisateur/FlaskApp .
+          docker push ton_nom_utilisateur/FlaskApp
 
