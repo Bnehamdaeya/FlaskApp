@@ -19,7 +19,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'  # specify your Python version
+          python-version: '3.10'  # spécifiez votre version de Python
 
       - name: Install dependencies
         run: |
@@ -28,13 +28,13 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest  # replace with your test command
+          pytest  # remplacez par votre commande de test
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKER_eya2554 }}  # Ensure this matches your renamed secret
-          password: ${{ secrets.DOCKER_Paris210824!@ }}  # Ensure this matches your renamed secret
+          username: ${{ secrets.DOCKER_eya2554 }}  # Assurez-vous que cela correspond à votre secret renommé
+          password: ${{ secrets.DOCKER_Paris210824!@ }}  # Assurez-vous que cela correspond à votre secret renommé
 
       - name: Build and tag Docker image
         run: |
