@@ -11,7 +11,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -39,5 +38,5 @@ jobs:
            password: ${{ secrets.DOCKER_PASSWORD }}  # Utilisation du secret
       - name: Push to another Docker registry
       run: |
-        docker tag eya2554/flaskappp eya2554/flaskappp:latest
-        docker push eya2554/flaskappp:latest
+        docker tag eya2554/appflask eya2554/appflask:latest
+        docker push eya2554/appflask:latest
