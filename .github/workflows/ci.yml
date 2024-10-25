@@ -29,7 +29,7 @@ jobs:
         run: |
           pytest
         continue-on-error: true  # Only for debugging
-        name: Log in to Docker Hub
+      - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKER_eya2554 }}
@@ -42,4 +42,3 @@ jobs:
       - name: Push Docker image to Docker Hub
         run: |
           docker push ${{ secrets.DOCKER_eya2554 }}/flaskapp:latest
-        continue-on-error: true  # Only use this if you want to ignore errors during the push step
